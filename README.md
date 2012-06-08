@@ -116,19 +116,16 @@ The chosen code format must ensure that code is: easy to read; easy to clearly c
 
 #### Declaration order
 
-Declarations should be ordered in accordance with a single principle. Although alphabetical ordering is sometimes used, preference is for related properties to be grouped together and for structurally important properties (e.g. positioning and box-model) to be declared prior to typographic, background, and color properties.
+Declarations should be ordered alphabetically so properties are easy to find and modify.
 
 ```css
 .selector {
-    position: relative;
-    display: block;
-    width: 50%;
-    height: 100px;
-    padding: 10px;
-    border: 0;
-    margin: 10px;
-    color: #fff
     background: #000;
+    color: #fff;
+    display: block;
+    font-family: Georgia;
+    margin: 20px;
+    padding: 10px;
 }
 ```
 
