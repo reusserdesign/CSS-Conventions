@@ -57,15 +57,12 @@ Tip: configure your editor to provide you with shortcuts to output agreed-upon c
 ```css
 /* ====================================================================
    Section comment block
+   An optional description here
    ==================================================================== */
 
 /* Sub-section comment block
+   An optional description here
    ==================================================================== */
-
-/*
- * Group comment block.
- * Ideal for multi-line explanations and documentation.
- */
 
 /* Basic comment */
 ```
@@ -75,15 +72,12 @@ Tip: configure your editor to provide you with shortcuts to output agreed-upon c
 ```scss
 // ====================================================================
 // Section comment block
+// An optional description here
 // ====================================================================
 
 // Sub-section comment block
+// An optional description here
 // ====================================================================
-
-//
-// Group comment block
-// Ideal for multi-line explanations and documentation.
-//
 
 // Basic comment
 ```
@@ -152,7 +146,8 @@ Very long property values - such as complex collections of gradients or shadows 
 
 Different CSS preprocessors have different features, functionality, and syntax. Your conventions should be extended to accommodate the particularities of any preprocessor in use. The following guidelines are in reference to Sass.
 
-* Limit nesting to 1 level deep. Reassess any nesting more than 2 levels deep. This prevents overly specific CSS selectors.
+* Try to limit nesting to 1 level deep. Reassess any nesting more than 2 levels deep. This prevents overly specific CSS selectors.
+* Do not add a new line between each nested rule. This creates unnecessary clutter.
 * Avoid large numbers of nested rules. Break them up when readability starts to be affected. Preference to avoid nesting that spreads over more than 20 lines.
 * Always place `@extend` statements on the first lines of a declaration block.
 * Where possible, group `@include` statements at the top of a declaration block, after any `@extend` statements.
@@ -203,16 +198,16 @@ An example of various conventions.
 ```scss
 // ====================================================================
 // Grid layout
+// This determines the basic frame of the site
 // ====================================================================
 
-//
 // Example HTML:
 //
 // <div class="grid">
 //     <div class="cell cell-5"></div>
 //     <div class="cell cell-5"></div>
 // </div>
-//
+// ====================================================================
 
 .grid {
 	@include box-sizing(border-box);
@@ -239,10 +234,11 @@ An example of various conventions.
 	// Reset white-space
 	white-space: normal;
 	width: 20%;
-
-	// Cell states
 	&.is-animating {
 		background-color: $cell-highlight-color
+	}
+	&.middle {
+		text-align: center;
 	}
 }
 
