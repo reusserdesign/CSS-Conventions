@@ -24,6 +24,7 @@ This is a living document and new ideas are always welcome. Please contribute.
 * All code in any code-base should look like a single person typed it, no matter how many people contributed.
 * Strictly enforce the agreed upon style.
 * If in doubt use existing, common patterns.
+* Create new lines after each new rule.
 
 
 ## 2. Whitespace
