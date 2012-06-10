@@ -202,18 +202,18 @@ Use clear and thoughtful names for HTML classes. Pick an understandable and cons
 An example of various conventions.
 
 ```scss
-/* =====================================================================
-   Grid layout
-   ===================================================================== */
+// ====================================================================
+// Grid layout
+// ====================================================================
 
-/*
- * Example HTML:
- *
- * <div class="grid">
- *     <div class="cell cell-5"></div>
- *     <div class="cell cell-5"></div>
- * </div>
- */
+//
+// Example HTML:
+//
+// <div class="grid">
+//     <div class="cell cell-5"></div>
+//     <div class="cell cell-5"></div>
+// </div>
+//
 
 .grid {
 	@include box-sizing(border-box);
@@ -241,15 +241,14 @@ An example of various conventions.
 	white-space: normal;
 	width: 20%;
 
-	/* Cell states */
-
+	// Cell states
 	&.is-animating {
 		background-color: $cell-highlight-color
 	}
 }
 
-/* Cell dimensions
-   ===================================================================== */
+// Cell dimensions
+// ====================================================================
 
 .cell-1 { width: 10%; }
 .cell-2 { width: 20%; }
@@ -257,8 +256,8 @@ An example of various conventions.
 .cell-4 { width: 40%; }
 .cell-5 { width: 50%; }
 
-/* Cell modifiers
-   ===================================================================== */
+// Cell modifiers
+// ====================================================================
 
 .cell--detail,
 .cell--important {
