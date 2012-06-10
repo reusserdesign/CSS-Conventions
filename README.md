@@ -31,8 +31,8 @@ This is a living document and new ideas are always welcome. Please contribute.
 Only one style should exist across the entire source of your project. Always be consistent in your use of whitespace. Use whitespace to improve readability.
 
 * _Never_ mix spaces and tabs for indentation.
-* Choose between soft indents (spaces) or real tabs. Stick to your choice without fail. (Preference: spaces)
-* If using spaces, choose the number of characters used per indentation level. (Preference: 4 spaces)
+* Choose between soft indents (spaces) or real tabs. Stick to your choice without fail. (Preference: tabs)
+* If using spaces, choose the number of characters used per indentation level for consistency.
 
 Tip: configure your editor to "show invisibles". This will allow you to eliminate end of line whitespace, eliminate unintended blank line whitespace, and avoid polluting commits.
 
@@ -105,27 +105,27 @@ The chosen code format must ensure that code is: easy to read; easy to clearly c
 .selector-1,
 .selector-2,
 .selector-3 {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: block;
-    color: #333;
-    background: #fff;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background: #fff;
+	display: block;
+	color: #333;
 }
 ```
 
 #### Declaration order
 
-Declarations should be ordered alphabetically so properties are easy to find and modify.
+Declarations should be ordered alphabetically so properties are easy to find.
 
 ```css
 .selector {
-    background: #000;
-    color: #fff;
-    display: block;
-    font-family: Georgia;
-    margin: 20px;
-    padding: 10px;
+	background: #000;
+	color: #fff;
+	display: block;
+	font-family: Georgia;
+	margin: 20px;
+	padding: 10px;
 }
 ```
 
@@ -159,11 +159,11 @@ Different CSS preprocessors have different features, functionality, and syntax. 
 
 ```scss
 .selector-1 {
-    @extend .other-rule;
-    @include clearfix();
-    @include box-sizing(border-box);
-    width: x-grid-unit(1);
-    // other declarations
+	@extend .other-rule;
+	@include clearfix();
+	@include box-sizing(border-box);
+	width: x-grid-unit(1);
+	// other declarations
 }
 ```
 
@@ -178,21 +178,21 @@ Use clear and thoughtful names for HTML classes. Pick an understanderable and co
 /* Example of code with bad names */
 
 .s-scr {
-    overflow: auto;
+	overflow: auto;
 }
 
 .cb {
-    background: #000;
+	background: #000;
 }
 
 /* Example of code with better names */
 
 .is-scrollable {
-    overflow: auto;
+	overflow: auto;
 }
 
 .column-body {
-    background: #000;
+	background: #000;
 }
 ```
 
@@ -216,36 +216,36 @@ An example of various conventions.
  */
 
 .grid {
-    @include box-sizing(border-box);
-    overflow: visible;
-    height: 100%;
-    // Prevent inline-block cells wrapping
-    white-space: nowrap;
-    // Remove inter-cell whitespace
-    font-size: 0;
+	@include box-sizing(border-box);
+	// Remove inter-cell whitespace
+	font-size: 0;
+	height: 100%;
+	overflow: visible;
+	// Prevent inline-block cells wrapping
+	white-space: nowrap;
 }
 
 .cell {
-    @include box-sizing(border-box);
-    @include transition(box-shadow, 0.25s, ease-in-out, 0s);
-    position: relative;
-    overflow: hidden;
-    width: 20%;
-    height: 100%;
-    // Set the inter-cell spacing
-    padding: 0 $grid-gutter;
-    border: 2px solid #333;
-    vertical-align: top;
-    // Reset white-space
-    white-space: normal;
-    // Reset font-size
-    font-size: $fontsize-default;
+	border: 2px solid #333;
+	@include box-sizing(border-box);
+	// Reset font-size
+	font-size: $fontsize-default;
+	height: 100%;
+	overflow: hidden;
+	// Set the inter-cell spacing
+	padding: 0 $grid-gutter;
+	position: relative;
+	@include transition(box-shadow, 0.25s, ease-in-out, 0s);
+	vertical-align: top;
+	// Reset white-space
+	white-space: normal;
+	width: 20%;
 
-    /* Cell states */
+	/* Cell states */
 
-    &.is-animating {
-        background-color: $cell-highlight-color
-    }
+	&.is-animating {
+		background-color: $cell-highlight-color
+	}
 }
 
 /* Cell dimensions
@@ -262,7 +262,7 @@ An example of various conventions.
 
 .cell--detail,
 .cell--important {
-    border-width: 4px;
+	border-width: 4px;
 }
 ```
 
@@ -278,7 +278,7 @@ Code organization is an important part of any CSS code base, and crucial for lar
 
 ## 8. Build and deployment
 
-Projects should always attempt to include some generic means by which source can be linted, tested, compressed, and versioned in preparation for production use. For this task, [grunt](https://github.com/cowboy/grunt) by Ben Alman is an excellent tool.
+When using Sass, compile your CSS using the "expanded" method during development. This will produce useful diffs and keep merging conflicts to a minimum. Make sure to compile the CSS using the "compressed" method when the site is in production.
 
 
 ## Acknowledgements
