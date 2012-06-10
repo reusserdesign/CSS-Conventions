@@ -160,8 +160,8 @@ Different CSS preprocessors have different features, functionality, and syntax. 
 ```scss
 .selector-1 {
 	@extend .other-rule;
-	@include clearfix();
 	@include box-sizing(border-box);
+	@include clearfix();
 	width: x-grid-unit(1);
 	// other declarations
 }
@@ -176,7 +176,6 @@ Use clear and thoughtful names for HTML classes. Pick an understandable and cons
 
 ```css
 /* Example of code with bad names */
-
 .s-scr {
 	overflow: auto;
 }
@@ -186,7 +185,6 @@ Use clear and thoughtful names for HTML classes. Pick an understandable and cons
 }
 
 /* Example of code with better names */
-
 .is-scrollable {
 	overflow: auto;
 }
@@ -249,7 +247,6 @@ An example of various conventions.
 
 // Cell dimensions
 // ====================================================================
-
 .cell-1 { width: 10%; }
 .cell-2 { width: 20%; }
 .cell-3 { width: 30%; }
@@ -258,7 +255,6 @@ An example of various conventions.
 
 // Cell modifiers
 // ====================================================================
-
 .cell--detail,
 .cell--important {
 	border-width: 4px;
